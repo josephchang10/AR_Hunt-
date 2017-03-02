@@ -27,7 +27,7 @@ class MapViewController: UIViewController {
   }
   
   func setupLocations() {
-    let firstTarget = ARItem(itemDescription: "wolf", location: CLLocation(latitude: 32.0454281247, longitude: 118.8060626474), itemNode: nil)
+    let firstTarget = ARItem(itemDescription: "wolf", location: CLLocation(latitude: 50.5185, longitude: 8.3899), itemNode: nil)
     targets.append(firstTarget)
     
     let secondTarget = ARItem(itemDescription: "wolf", location: CLLocation(latitude: 50.5184, longitude: 8.3895), itemNode: nil)
@@ -52,7 +52,7 @@ extension MapViewController: MKMapViewDelegate {
     let coordinate = view.annotation!.coordinate
     
     if let userCoordinate = userLocation {
-      if userCoordinate.distance(from: CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)) < 1000 {
+      if userCoordinate.distance(from: CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)) < 50 {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         if let viewController = storyboard.instantiateViewController(withIdentifier: "ARViewController") as? ViewController {
