@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tHd-hI-CPL">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="Xob-jS-twS">
+            <objects>
+                <viewController id="tHd-hI-CPL" customClass="MapViewController" customModule="AR_Hunt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vOj-BS-yJe"/>
+                        <viewControllerLayoutGuide type="bottom" id="xYq-Ug-Q7r"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6ie-LF-1t8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s1B-Qz-1UN">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <connections>
+                                    <outlet property="delegate" destination="tHd-hI-CPL" id="scA-HU-W2w"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="s1B-Qz-1UN" firstAttribute="top" secondItem="vOj-BS-yJe" secondAttribute="bottom" id="4KQ-K8-SPG"/>
+                            <constraint firstItem="xYq-Ug-Q7r" firstAttribute="top" secondItem="s1B-Qz-1UN" secondAttribute="bottom" id="DcY-cV-afc"/>
+                            <constraint firstAttribute="trailing" secondItem="s1B-Qz-1UN" secondAttribute="trailing" id="baO-Sz-DAN"/>
+                            <constraint firstItem="s1B-Qz-1UN" firstAttribute="leading" secondItem="6ie-LF-1t8" secondAttribute="leading" id="gnI-4b-14V"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="s1B-Qz-1UN" id="wY0-Xr-FZv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AGf-ao-mtZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-546" y="139"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ARViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="AR_Hunt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pac-nM-L0n">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </sceneKitView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Or7-GS-re1">
+                                <rect key="frame" x="339" y="318" width="16" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3AF-xs-KJr">
+                                <rect key="frame" x="20" y="319" width="16" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="pac-nM-L0n" secondAttribute="trailing" id="5wN-Mi-9Je"/>
+                            <constraint firstItem="pac-nM-L0n" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Mp9-c3-1hd"/>
+                            <constraint firstItem="pac-nM-L0n" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ZFM-bC-mCK"/>
+                            <constraint firstItem="Or7-GS-re1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="boy-wf-g6C"/>
+                            <constraint firstItem="3AF-xs-KJr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="n1N-JT-Q7B"/>
+                            <constraint firstItem="3AF-xs-KJr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="rbT-rj-DO8"/>
+                            <constraint firstAttribute="trailing" secondItem="Or7-GS-re1" secondAttribute="trailing" constant="20" symbolic="YES" id="ssr-0m-t2L"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pac-nM-L0n" secondAttribute="bottom" id="zZd-oa-nLQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="leftIndicator" destination="3AF-xs-KJr" id="ICn-dD-DD9"/>
+                        <outlet property="rightIndicator" destination="Or7-GS-re1" id="bAJ-cN-pBu"/>
+                        <outlet property="sceneView" destination="pac-nM-L0n" id="vxE-5s-hjy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
